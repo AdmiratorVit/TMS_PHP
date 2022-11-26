@@ -6,7 +6,9 @@
 </head>
 <body>
 <?php
-@include "code.php";
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
+@include "code24_11.php";
 ?>
 </body>
 </html>
