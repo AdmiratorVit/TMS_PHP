@@ -25,7 +25,6 @@ echo "<br>";
 
 echo "<b>Задача 4</b><br>"; //специально оставил кирилицу для выяснения ситуации
 $rl = 'Проверка связи';
-//mb_internal_encoding('UTF-8');
 echo $rl[0];
 echo "<br>";
 echo $rl[strlen($rl)-1] ;

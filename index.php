@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
+
 <head>
     <meta charset="utf-8">
     <title>Моя домашка</title>
@@ -8,8 +9,8 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
-@include "code.php";
-//@include "code24_11.php";
+@include_once "code.php";
+//@include "code_24_11.php";
 ?>
 </body>
 </html>
