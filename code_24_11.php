@@ -26,7 +26,7 @@ echo "<b>Задача 3</b><br>";
 $a = 20;
 $i = 1;
 $summ_q = 0;
-while ($i >= 1 and $i <= $a) {
+while ($i >= 1 && $i <= $a) {
     $temp = $i * $i;
     $summ_q = $summ_q + $temp;
     $i++;
@@ -46,12 +46,10 @@ for ($a = 1; $a < 11; $a++) {
 
 echo "<b>Задача 5</b><br>";
 $arr = [];
-//$str_my = "Пойдем по пути наибольшего сопротивления";
 $str_my = "Poydem po puti naimenshego soprotivleniya";
 $len = strlen($str_my);
 $new_word = '';
-//echo $str_my[0];
-//echo $len;
+
 for ($i = 0; $i <= $len - 1; $i++) {
     if ($str_my[$i] !== " ") {
         $new_word = $new_word . $str_my[$i];
@@ -87,16 +85,15 @@ $try = 0;
 foreach ($arr as $words) {
     $try++;
     $revers = "";
-    for($i = strlen($words)-1; $i >= 0; $i--){
+    for ($i = strlen($words)-1; $i >= 0; $i--) {
         $revers = $revers . $words[$i];
     }
-//    echo $revers;
-//    echo "<br>";
-    if ($revers == $words){
+    if ($revers == $words) {
         $pal_count++;
         echo $revers;
         echo "<br>";
     }
-    if ($pal_count == 0 and $try == count($arr)) {
-        echo "v spiske palindroma net";}
+    if ($pal_count == 0 && $try == count($arr)) {
+        echo "v spiske palindroma net";
+    }
 }
