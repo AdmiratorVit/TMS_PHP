@@ -2,82 +2,114 @@
 echo "<h2>Задание за 01.12.2022</h2><br>";
 echo "<b>Задача 1</b><br>";
 
-
-
-$nf = true;
-$mass = [1, 7, 5, 65, 32, 4, 48];
-foreach ($mass as $key => $data) {
-    if (($key ** 2) == $data) {
-        echo $key;
-        $nf = false;
+$StrElements = "1,2,8,4,6,9,7";
+function SummUnknownElements($arg)
+{ // функция вычисления суммы и чисел строки или массива
+    if (!is_array($arg))
+    {
+        $TempArr = explode(",", $arg);
+    } else {
+        $TempArr = $arg;
     }
+    return array_sum($TempArr);
 }
-if ($nf) {
-    echo "Not found";
-}
+echo SummUnknownElements($StrElements);
 echo "<br>";
-
 
 echo "<b>Задача 2</b><br>";
-$mass = [1, 7, 5, 65, 32, 7, 48];
-foreach ($mass as $key => $sear) {
-    if ($key != array_search($sear, $mass)) {
-        echo $sear;
-        echo "<br>";
-        unset($mass[$key]);
-    }
+function Square($w, $h){
+    return $w * $h;
 }
-var_dump($mass);
-echo "<br>";
-
-echo "<b>Задача 2 (Это если просто удалить, без вывода ключа)</b><br>";
-$mass = [1, 7, 5, 65, 32, 7, 48];
-$mass_new = array_unique($mass);
-var_dump($mass_new);
+echo Square(7, 8);
 echo "<br>";
 
 echo "<b>Задача 3</b><br>";
-$mass = [1, 7, 5, 65, 32, 7, 48];
-$mass_2 = [43, 5, 245, 34, 98, 24, 76];
-$mass_3 = array_merge($mass, $mass_2);
-arsort($mass_3);
-var_dump($mass_3);
+function Gipotenuza($k1, $k2)
+{
+    return sqrt($k1**2 + $k2**2);
+}
+echo Gipotenuza(10, 5);
 echo "<br>";
 
 echo "<b>Задача 4</b><br>";
-$str_mass = [
-    "Виталик",
-    "Оля",
-    "Дима",
-    "Валентина",
-    "Татьяна",
-    "Вольф",
-    "Флаффи",
-    "Люкс"
-];
-$etalon = "Вольф";
-echo array_search($etalon, $str_mass);
-echo "<br>";
-
+function Palindrom($str){
+    if ($str == strrev($str))
+    {
+        echo $str . " - это палиндром";
+    } else {
+        echo $str . " - это НЕ палиндром";
+    }
+    echo "<br>";
+}
+Palindrom("madam");
 
 echo "<b>Задача 5</b><br>";
-$arr_word = [];
-$word = "";
-for ($i = 1; $i < 5;) {
-    $word = readline("Введите слово");
-    switch ($word) {
-        case "Exit":
-            break 2;
-        default:
-            $arr_word[] = $word;
-    }
+function HowMuchIsTheFish($str, $simbol)
+{
+    $CountEnt = 0;
+    for ($i = 0; ($i <= strlen($str)); $i++) {
+        if ($str[$i] == $simbol) {
+            $CountEnt++;
+        }
+    } return $CountEnt;
 }
-var_dump($arr_word);
+$strings = "Scooter No time to chill How much is the fish";
+echo HowMuchIsTheFish($strings, "e");
 echo "<br>";
 
 echo "<b>Задача 6</b><br>";
-$mass_6 = [1, 7, 5, 65, 32, 7, 48];
-$for_delete = mt_rand(0, count($mass_6) - 1);
-unset($mass_6[$for_delete]);
-var_dump($mass_6);
+function biggestSymbol($str)
+{
+    if (strlen($str) > 0) {
+        $TempArr = str_split($str, 1);
+        $sym = "";
+        $asc = null;
+        foreach ($TempArr as $item) {
+            if (ord($item) > $asc) {
+                $asc = ord($item);
+                $sym = $item;
+            }
+        }
+        echo "Самый большой ASCII номер " . $asc . " имеет символ " . $sym;
+    } else {
+        echo "Передана пустая строка";
+        return null;
+    }
+}
+biggestSymbol($strings);
 echo "<br>";
+
+function summOfSymbols($str)
+{
+    if (strlen($str) > 0) {
+        $TempArr = str_split($str, 1);
+        $sum = 0;
+        foreach ($TempArr as $item) {
+            $sum += ord($item);
+        }
+    } else {
+        echo "Передана пустая строка";
+        return null;
+    }
+    echo "Сумма ASCII значений символов строки 	&quot;" . $str . "&quot; равна " . $sum;
+}
+summOfSymbols($strings);
+echo "<br>";
+
+
+function count_function_calls($request = false)
+{
+    static $numcalls = 0;
+    $numcalls++;
+
+    if ($request) {
+        echo "Эта функция была вызвана " . $numcalls . " раз.";
+    }
+}
+
+count_function_calls();
+count_function_calls();
+count_function_calls();
+count_function_calls();
+count_function_calls();
+count_function_calls(true);
