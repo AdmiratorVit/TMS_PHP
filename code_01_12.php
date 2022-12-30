@@ -110,6 +110,7 @@ function count_function_calls($request = false)
 count_function_calls();
 count_function_calls();
 count_function_calls();
+count_function_calls(true);
 count_function_calls();
 count_function_calls();
 count_function_calls(true);
