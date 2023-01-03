@@ -1,0 +1,49 @@
+table {
+  border-collapse: collapse;
+  border: black solid 2px;
+  text-align: center;
+  width: 100%;
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+table td {
+  border: grey dashed 2px;
+}
+
+table th {
+  border: grey dashed 2px;
+  background-color: #f6d20b;
+}
+
+img {
+  width: 200px;
+}
+
+p {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+}
+
+table caption {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: beige;
+}
+
+tr:hover td {
+  background-color: coral;
+}
+
+span {
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+/*# sourceMappingURL=0912.css.map */
